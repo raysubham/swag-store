@@ -1,10 +1,6 @@
-import Page from '../components/Page'
+export { default } from './products'
 
-export default function IndexPage() {
-  return (
-    <>
-      <Page></Page>
-      <p>hello</p>
-    </>
-  )
-}
+//both same
+// import ProductsPage from './products'
+
+// export default ProductsPage
