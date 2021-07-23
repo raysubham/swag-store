@@ -16,6 +16,17 @@ const Product = ({ product }) => {
       </Title>
       <PriceTag>{formatMoney(product.price)}</PriceTag>
       <p style={{ textAlign: 'center' }}>{product.description}</p>
+      <div className='buttonlist'>
+        <Link
+          href={{
+            pathname: 'update',
+            query: {
+              id: product.id,
+            },
+          }}>
+          Edit
+        </Link>
+      </div>
     </ItemStyles>
   )
 }
