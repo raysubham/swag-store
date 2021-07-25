@@ -8,7 +8,7 @@ const DELETE_PRODUCT_MUTATION = gql`
     }
   }
 `
-
+//runs this function after called update in usemutation options
 const updatePageAfterDelete = (cache, payload) => {
   cache.evict(cache.identify(payload.data.deleteProduct))
 }

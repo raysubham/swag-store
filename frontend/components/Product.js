@@ -27,9 +27,7 @@ const Product = ({ product }) => {
           }}>
           Edit
         </Link>
-        <div>
-          <DeleteProduct id={product.id} children='Delete' />
-        </div>
+        <DeleteProduct id={product.id}>Delete</DeleteProduct>
       </div>
     </ItemStyles>
   )

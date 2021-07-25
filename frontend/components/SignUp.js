@@ -26,7 +26,9 @@ const SignUp = () => {
     password: '',
   })
 
-  const [signUp, { data, loading, error }] = useMutation(SIGNUP_MUTATION)
+  const [signUp, { data, loading, error }] = useMutation(SIGNUP_MUTATION, {
+    variables: inputs,
+  })
 
   const handleSubmit = async (e) => {
     e.preventDefault()
