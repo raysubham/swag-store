@@ -1,9 +1,8 @@
 import useForm from '../lib/useForm'
 import Form from './styles/Form'
-import gql from 'graphql-tag'
-import { useMutation } from '@apollo/client'
+import { useMutation, gql } from '@apollo/client'
 import DisplayError from './ErrorMessage'
-import { ALL_PRODUCTS_QUERY } from '../pages/products'
+import { ALL_PRODUCTS_QUERY } from './Products'
 import Router from 'next/router'
 import { route } from 'next/dist/next-server/server/router'
 
@@ -51,7 +50,6 @@ export const CreateProduct = () => {
       <Form
         onSubmit={async (e) => {
           e.preventDefault()
-          console.log(inputs)
           const res = await createProduct()
           clearForm()
           Router.push({

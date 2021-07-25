@@ -17,20 +17,22 @@ const Form = styled.form`
   background: rgba(0, 0, 0, 0.02);
   border: 5px solid white;
   padding: 20px;
-  font-size: 1.5rem;
-  line-height: 1.5;
+  font-size: 1.75rem;
+  line-height: 2;
+  text-align: start;
   font-weight: 600;
   label {
     display: block;
-    margin-bottom: 1rem;
+    margin-top: 0.2rem;
   }
   input,
   textarea,
   select {
     width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid black;
+    padding: 0.75rem;
+    font-size: 1.25rem;
+    border: 1.5px solid black;
+    margin-bottom: 0.2rem;
     &:focus {
       outline: 0;
       border-color: var(--red);
@@ -46,6 +48,7 @@ const Form = styled.form`
     font-weight: 600;
     padding: 0.5rem 1.2rem;
     cursor: pointer;
+    margin: 1rem auto;
   }
   fieldset {
     border: 0;
@@ -69,6 +72,9 @@ const Form = styled.form`
       background-size: 50% auto;
       animation: ${loading} 0.5s linear infinite;
     }
+  }
+  h2 {
+    text-align: center;
   }
 `
 

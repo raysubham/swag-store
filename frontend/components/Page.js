@@ -31,6 +31,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     font-size: 1.2rem;
     line-height:2;
+    text-align: center;
   }
   a {
     text-decoration: none;
@@ -50,7 +51,7 @@ const InnerStyles = styled.div`
   padding: 2rem;
 `
 
-const Page = ({ children, cool }) => {
+const Page = ({ children }) => {
   return (
     <>
       <GlobalStyles />

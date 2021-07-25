@@ -1,8 +1,8 @@
-import gql from 'graphql-tag'
-import { useQuery, useMutation } from '@apollo/client'
+import { useQuery, useMutation, gql } from '@apollo/client'
 import Form from './styles/Form'
 import DisplayError from '../components/ErrorMessage'
 import useForm from '../lib/useForm'
+import Loading from './Loading'
 
 const SINGLE_PRODUCT_QUERY = gql`
   query SINGLE_PRODUCT_QUERY($id: ID!) {
@@ -42,7 +42,8 @@ export const UpdateProduct = ({ id }) => {
 
   const { inputs, handleChange } = useForm(data?.Product)
 
-  if (loading) return <p>Loading...</p>
+  if (loading) return <Loading />
+  if (error) return <DisplayError error={error} />
 
   return (
     <Form
@@ -96,8 +97,7 @@ export const UpdateProduct = ({ id }) => {
             onChange={handleChange}
           />
         </label>
-
-        <button>Update Product</button>
+        <button type='submit'>Update Product</button>
       </fieldset>
     </Form>
   )

@@ -1,8 +1,8 @@
-import { useQuery } from '@apollo/client'
+import { useQuery, gql } from '@apollo/client'
 import DisplayError from '../components/ErrorMessage'
-import gql from 'graphql-tag'
 import Head from 'next/head'
 import styled from 'styled-components'
+import Loading from './Loading'
 
 const SingleProductStyles = styled.div`
   display: grid;
@@ -40,7 +40,7 @@ const SingleProduct = ({ id }) => {
     variables: { id },
   })
 
-  if (loading) return <p>Loading...</p>
+  if (loading) return <Loading />
   if (error) return <DisplayError error={error} />
   const { Product } = data
 
