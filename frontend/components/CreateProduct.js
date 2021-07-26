@@ -47,6 +47,7 @@ export const CreateProduct = () => {
 
   return (
     <>
+      <h1>Sell your own Product!</h1>
       <Form
         onSubmit={async (e) => {
           e.preventDefault()
@@ -111,3 +112,4 @@ export const CreateProduct = () => {
     </>
   )
 }
+  
