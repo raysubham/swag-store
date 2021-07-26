@@ -9,6 +9,7 @@ export const Product = list({
         displayMode: 'textarea',
       },
     }),
+    price: integer(),
     photo: relationship({
       ref: 'ProductImage.product',
       ui: {
@@ -38,7 +39,6 @@ export const Product = list({
         },
       },
     }),
-    price: integer(),
   },
   ui: {
     listView: {

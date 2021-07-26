@@ -4,7 +4,24 @@ const CURRENT_USER_QUERY = gql`
   query CURRENT_USER_QUERY {
     authenticatedItem {
       ... on User {
+        id
+        name
         email
+        cart {
+          id
+          quantity
+          product {
+            id
+            name
+            description
+            price
+            photo {
+              image {
+                publicUrlTransformed
+              }
+            }
+          }
+        }
       }
     }
   }

@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import Header from './Header'
+import Cart from './Cart'
 
 const GlobalStyles = createGlobalStyle`
  @font-face {
@@ -56,6 +57,7 @@ const Page = ({ children }) => {
     <>
       <GlobalStyles />
       <Header />
+      <Cart />
       <InnerStyles> {children}</InnerStyles>
     </>
   )
