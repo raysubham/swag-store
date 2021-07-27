@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { formatMoney } from '../lib/formatMoney'
+import Button from './RemoveFromCart'
 
 const CartItemsStyles = styled.li`
   padding: 1rem 0;
@@ -15,7 +16,7 @@ const CartItemsStyles = styled.li`
   }
 `
 
-const CartItem = ({ cartItem, user }) => {
+const CartItem = ({ cartItem }) => {
   const product = cartItem.product
   return (
     <CartItemsStyles>
@@ -34,6 +35,7 @@ const CartItem = ({ cartItem, user }) => {
           each
         </p>
       </div>
+      <Button id={cartItem.id} />
     </CartItemsStyles>
   )
 }

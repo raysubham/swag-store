@@ -12,7 +12,6 @@ const Cart = () => {
   const currentUser = useUser()
   if (!currentUser) return null
 
-  console.log(currentUser)
   const firstName = currentUser.name.split(' ')[0]
   return (
     <CartStyles open={cartOpen}>
@@ -22,7 +21,7 @@ const Cart = () => {
       </header>
       <ul>
         {currentUser.cart.map((cartItem) => (
-          <CartItem key={cartItem.id} cartItem={cartItem} user={currentUser} />
+          <CartItem key={cartItem.id} cartItem={cartItem} />
         ))}
       </ul>
       <footer>

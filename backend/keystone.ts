@@ -11,6 +11,7 @@ import {
 } from '@keystone-next/keystone/session'
 import { insertSeedData } from './seed-data'
 import { sendPasswordResetEmail } from './lib/mail'
+import { extendGrahqlSchema } from './mutations'
 
 const databaseURL = process.env.DATABASE_URL
 
@@ -55,8 +56,9 @@ export default withAuth(
       User,
       Product,
       ProductImage,
-      CartItem
+      CartItem,
     }),
+    extendGraphqlSchema: extendGrahqlSchema,
     ui: {
       isAccessAllowed: ({ session }) => {
         return !!session?.data
