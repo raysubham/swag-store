@@ -8,7 +8,6 @@ const addToCart = async (
   context: KeystoneContext
 ): Promise<CartItemCreateInput> => {
   const session = context.session as Session
-  console.log(session)
 
   if (!session.itemId) {
     throw new Error('You must be logged in first!')
@@ -18,13 +17,8 @@ const addToCart = async (
     resolveFields: 'id,quantity',
   })
   const [existingCartItem] = allCartItems
-  console.log(allCartItems)
-  console.log(existingCartItem)
 
   if (existingCartItem) {
-    console.log(
-      `there are ${existingCartItem.quantity} items in cart , increment by 1`
-    )
     return await context.lists.CartItem.updateOne({
       id: existingCartItem.id,
       data: { quantity: existingCartItem.quantity + 1 },

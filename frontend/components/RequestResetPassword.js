@@ -3,7 +3,6 @@ import Form from './styles/Form'
 import useForm from '../lib/useForm'
 import { CURRENT_USER_QUERY } from './User'
 import DisplayError from './ErrorMessage'
-import Router from 'next/router'
 
 const REQUEST_RESET_PASSWORD_MUTATION = gql`
   mutation REQUEST_RESET_PASSWORD_MUTATION($email: String!) {

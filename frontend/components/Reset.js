@@ -43,8 +43,6 @@ const Reset = ({ token }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const res = await resetPassword().catch(console.error)
-    // resetForm()
-    console.log({ data, loading, SuccessError })
   }
 
   if (data?.redeemUserPasswordResetToken === null)

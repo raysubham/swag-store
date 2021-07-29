@@ -1,6 +1,7 @@
 import { gql, useMutation } from '@apollo/client'
-import { CURRENT_USER_QUERY } from './User'
+import { CURRENT_USER_QUERY, useUser } from './User'
 import { useCart } from '../lib/useCart'
+import router from 'next/router'
 
 const ADD_TO_CART_MUTATION = gql`
   mutation ADD_TO_CART_MUTATION($id: ID!) {
@@ -11,6 +12,7 @@ const ADD_TO_CART_MUTATION = gql`
 `
 
 const AddToCart = ({ id }) => {
+  const user = useUser()
   const { openCart } = useCart()
   const [addToCart, { loading }] = useMutation(ADD_TO_CART_MUTATION, {
     variables: {
@@ -24,7 +26,10 @@ const AddToCart = ({ id }) => {
       disabled={loading}
       type='button'
       onClick={async () => {
-        await addToCart()
+        if (!user) {
+          router.push('/signin')
+        }
+        await addToCart().catch((err) => console.log(err))
         openCart()
       }}>
       Add{loading && 'ing'} To Cart 🛍️

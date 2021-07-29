@@ -49,7 +49,6 @@ const Search = () => {
   } = useCombobox({
     items: items,
     onInputValueChange() {
-      console.log('inpuy chanegd')
       findItemsWithSlightDelay({
         variables: {
           searchTerm: inputValue,

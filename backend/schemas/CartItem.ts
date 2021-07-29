@@ -1,5 +1,6 @@
-import { integer, relationship, select, text } from '@keystone-next/fields'
+import { integer, relationship } from '@keystone-next/fields'
 import { list } from '@keystone-next/keystone/schema'
+import { isSignedIn, rules } from '../access'
 
 export const CartItem = list({
   ui: {
@@ -14,5 +15,11 @@ export const CartItem = list({
     }),
     product: relationship({ ref: 'Product' }),
     user: relationship({ ref: 'User.cart' }),
+  },
+  access: {
+    create: isSignedIn,
+    read: rules.canOrder,
+    update: rules.canOrder,
+    delete: rules.canOrder,
   },
 })

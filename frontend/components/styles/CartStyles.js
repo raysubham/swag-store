@@ -8,8 +8,8 @@ const CartStyles = styled.div`
   height: 100%;
   top: 0;
   right: 0;
-  width: 30%;
-  min-width: 400px;
+  width: 35%;
+  min-width: 350px;
   bottom: 0;
   transform: translateX(100%);
   transition: all 0.3s;
@@ -24,11 +24,9 @@ const CartStyles = styled.div`
     padding-bottom: 2rem;
   }
   footer {
-    border-top: 8px solid var(--black);
+    border-top: 5px solid var(--black);
     margin-top: 2rem;
     padding-top: 2rem;
-    display: grid;
-    grid-template-columns: auto auto;
     align-items: center;
     font-size: 3rem;
     font-weight: 900;

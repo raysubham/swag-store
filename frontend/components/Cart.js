@@ -6,6 +6,7 @@ import { formatMoney } from '../lib/formatMoney'
 import { calcTotalPrice } from '../lib/calcTotalPrice'
 import { useCart } from '../lib/useCart'
 import CloseButton from './styles/CloseButton'
+import Checkout from './Checkout'
 
 const Cart = () => {
   const { cartOpen, closeCart } = useCart()
@@ -26,6 +27,7 @@ const Cart = () => {
       </ul>
       <footer>
         <p>{formatMoney(calcTotalPrice(currentUser.cart))}</p>
+        <Checkout />
       </footer>
     </CartStyles>
   )

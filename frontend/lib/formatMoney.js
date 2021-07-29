@@ -1,5 +1,3 @@
-import { mergeOptions } from '@apollo/client'
-
 export function formatMoney(amount = 0) {
   const options = {
     style: 'currency',
