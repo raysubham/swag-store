@@ -57,7 +57,7 @@ const Reset = ({ token }) => {
 
   return (
     <Form method='POST' onSubmit={handleSubmit} disabled={loading}>
-      <h2>Reset Your Passwordxxxxx!</h2>
+      <h2>Reset Your Password!</h2>
       <DisplayError error={error || SuccessError} />
       <fieldset>
         <label htmlFor='email'>Email</label>

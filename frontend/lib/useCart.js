@@ -2,8 +2,6 @@ import { createContext, useContext, useState } from 'react'
 
 const LocalStateContext = createContext()
 
-const LocalStateProvider = LocalStateContext.Provider
-
 const CartStateProvider = ({ children }) => {
   const [cartOpen, setCartOpen] = useState(false)
 
@@ -19,16 +17,15 @@ const CartStateProvider = ({ children }) => {
   }
 
   return (
-    <LocalStateProvider
+    <LocalStateContext.Provider
       value={{ cartOpen, setCartOpen, toggleCart, closeCart, openCart }}>
       {children}
-    </LocalStateProvider>
+    </LocalStateContext.Provider>
   )
 }
 
 const useCart = () => {
-  const all = useContext(LocalStateContext)
-  return all
+  return useContext(LocalStateContext)
 }
 
 export { CartStateProvider, useCart }
